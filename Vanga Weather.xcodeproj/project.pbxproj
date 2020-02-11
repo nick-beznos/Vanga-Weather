@@ -10,7 +10,6 @@
 		280ABACE23F2A22C00BBB994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ABACD23F2A22C00BBB994 /* AppDelegate.swift */; };
 		280ABAD023F2A22C00BBB994 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ABACF23F2A22C00BBB994 /* SceneDelegate.swift */; };
 		280ABAD223F2A22C00BBB994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ABAD123F2A22C00BBB994 /* ViewController.swift */; };
-		280ABAD523F2A22C00BBB994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280ABAD323F2A22C00BBB994 /* Main.storyboard */; };
 		280ABAD723F2A22E00BBB994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280ABAD623F2A22E00BBB994 /* Assets.xcassets */; };
 		280ABADA23F2A22E00BBB994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280ABAD823F2A22E00BBB994 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		280ABACD23F2A22C00BBB994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		280ABACF23F2A22C00BBB994 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		280ABAD123F2A22C00BBB994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		280ABAD423F2A22C00BBB994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		280ABAD623F2A22E00BBB994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		280ABAD923F2A22E00BBB994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		280ABADB23F2A22E00BBB994 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +54,22 @@
 		280ABACC23F2A22C00BBB994 /* Vanga Weather */ = {
 			isa = PBXGroup;
 			children = (
+				280ABAE123F2A36900BBB994 /* Support Files */,
+				280ABAD123F2A22C00BBB994 /* ViewController.swift */,
+			);
+			path = "Vanga Weather";
+			sourceTree = "<group>";
+		};
+		280ABAE123F2A36900BBB994 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
 				280ABACD23F2A22C00BBB994 /* AppDelegate.swift */,
 				280ABACF23F2A22C00BBB994 /* SceneDelegate.swift */,
-				280ABAD123F2A22C00BBB994 /* ViewController.swift */,
-				280ABAD323F2A22C00BBB994 /* Main.storyboard */,
 				280ABAD623F2A22E00BBB994 /* Assets.xcassets */,
 				280ABAD823F2A22E00BBB994 /* LaunchScreen.storyboard */,
 				280ABADB23F2A22E00BBB994 /* Info.plist */,
 			);
-			path = "Vanga Weather";
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +132,6 @@
 			files = (
 				280ABADA23F2A22E00BBB994 /* LaunchScreen.storyboard in Resources */,
 				280ABAD723F2A22E00BBB994 /* Assets.xcassets in Resources */,
-				280ABAD523F2A22C00BBB994 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +151,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		280ABAD323F2A22C00BBB994 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				280ABAD423F2A22C00BBB994 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		280ABAD823F2A22E00BBB994 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,7 +282,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T39VAFGL2;
-				INFOPLIST_FILE = "Vanga Weather/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Vanga Weather/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +300,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T39VAFGL2;
-				INFOPLIST_FILE = "Vanga Weather/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Vanga Weather/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
