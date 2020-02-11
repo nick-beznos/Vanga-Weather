@@ -8,13 +8,26 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        getCitiesFromJSON()
+        NetworkManager.shared.getWeather(for: 2643743) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let weather):
+                print(weather)
+            case .failure(let error):
+                print(error.rawValue)
+            }
+
+        }
         return true
     }
 
@@ -33,5 +46,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate {
+    func getCitiesFromJSON() {
+        guard !listOfCities.isEmpty else { return }
+        
+        // Get url for file
+        guard let fileUrl = Bundle.main.url(forResource: "listOfCities", withExtension: "json") else {
+            print("File could not be located at the given url")
+            return
+        }
+        
+        do {
+            
+            let decoder     = JSONDecoder()
+            let data        = try Data(contentsOf: fileUrl)
+            listOfCities    = try decoder.decode([City].self, from: data)
+
+            
+        } catch {
+            // Print error if something went wrong
+            print("Error: \(error)")
+        }
+    }
 }
 
