@@ -15,9 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         getCitiesFromJSON()
-        
         return true
     }
 
@@ -34,8 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 
 extension AppDelegate {
@@ -49,13 +45,9 @@ extension AppDelegate {
         }
         
         do {
-            
             let decoder     = JSONDecoder()
             let data        = try Data(contentsOf: fileUrl)
             listOfCities    = try decoder.decode([City].self, from: data)
-            print("listOfCities are filled")
-
-            
         } catch {
             // Print error if something went wrong
             print("Error: \(error)")

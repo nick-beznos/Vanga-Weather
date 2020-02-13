@@ -11,6 +11,7 @@ import UIKit
 class InitialNavVC: UINavigationController {
     let searchVC = SearchScreen()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewControllers = [searchVC]

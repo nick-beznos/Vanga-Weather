@@ -11,13 +11,15 @@ import UIKit
 
 class CityTableViewCell: UITableViewCell {
 
-    static let reuseID = "CityCell"
-    let cityLable = UILabel()
+    static let reuseID  = "CityCell"
+    let cityLable       = UILabel()
 
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configure()
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -47,6 +49,5 @@ class CityTableViewCell: UITableViewCell {
             cityLable.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
             cityLable.heightAnchor.constraint(equalToConstant: 40)
         ])
-        
     }
 }

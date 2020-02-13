@@ -10,7 +10,6 @@ import UIKit
 
 class AlertVC: UIViewController {
 
-    
     let containerView = AlertContainerView()
     let titleLabel    = VWTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel  = VWBodyLabel(textAlignment: .center)
@@ -18,18 +17,17 @@ class AlertVC: UIViewController {
     
     let padding: CGFloat = 20
     
-    
-    var alertTitle: String?
-    var message: String?
+    var alertTitle:  String?
+    var message:     String?
     var buttonTitle: String?
     
     
     init(title: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
         
-        self.alertTitle = title
-        self.message = message
-        self.buttonTitle = buttonTitle
+        self.alertTitle     = title
+        self.message        = message
+        self.buttonTitle    = buttonTitle
     }
     
     
@@ -56,7 +54,6 @@ class AlertVC: UIViewController {
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.widthAnchor.constraint(equalToConstant: 280),
             containerView.heightAnchor.constraint(equalToConstant: 280)
-
         ])
     }
     
@@ -101,6 +98,7 @@ class AlertVC: UIViewController {
             messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
         ])
     }
+    
     
     @objc func dismissVC() {
         dismiss(animated: true)

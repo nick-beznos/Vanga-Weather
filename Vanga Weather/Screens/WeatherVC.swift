@@ -10,19 +10,19 @@ import UIKit
 
 class WeatherVC: UIViewController {
     
-    let cityLabel = UILabel()
+    let cityLabel          = UILabel()
     let weatherDescription = UILabel()
-    let tempLabel = UILabel()
-    let weatherIcon = UIImageView()
+    let tempLabel          = UILabel()
+    let weatherIcon        = UIImageView()
     
     var cityID: Int!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
         getWeaterInfo()
         configureUIAndLayout()
-
     }
     
     
@@ -30,6 +30,7 @@ class WeatherVC: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.cityID = cityID
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -39,7 +40,7 @@ class WeatherVC: UIViewController {
     func configureVC() {
         view.backgroundColor = .systemBackground
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
-        navigationItem.rightBarButtonItem = doneButton
+        navigationItem.leftBarButtonItem = doneButton
     }
     
     
@@ -47,10 +48,10 @@ class WeatherVC: UIViewController {
         var temp = weather.main.temp - 273.15
         temp = temp.rounded(toPlaces: 1)
         
-        cityLabel.text = weather.name
+        cityLabel.text          = weather.name
         weatherDescription.text = weather.weather.first?.description
-        tempLabel.text = String(temp) + "℃"
-        weatherIcon.image = UIImage(named: weather.weather.last?.icon ?? "defaultIcon")
+        tempLabel.text          = String(temp) + "℃"
+        weatherIcon.image       = UIImage(named: weather.weather.last?.icon ?? "defaultIcon")
     }
 
     
@@ -60,11 +61,8 @@ class WeatherVC: UIViewController {
             
             switch result {
             case .success(let weather):
-                
                 DispatchQueue.main.async { self.configureUIElements(with: weather) }
-                
             case.failure(let error):
-                
                 self.presentGFAllertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "ok")
             }
         }
@@ -113,7 +111,6 @@ class WeatherVC: UIViewController {
             tempLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tempLabel.heightAnchor.constraint(equalToConstant: 110)
         ])
-        
     }
     
 

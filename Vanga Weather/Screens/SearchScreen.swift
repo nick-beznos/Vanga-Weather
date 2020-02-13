@@ -10,12 +10,12 @@ import UIKit
 
 class SearchScreen: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
-    var tableView = UITableView()
+    var tableView        = UITableView()
     
     enum Section: Hashable { case main }
     
-    var searchCities = [City]()
-    var isSearching = false
+    var searchCities     = [City]()
+    var isSearching      = false
     var weather: Weather!
     var dataSource: UITableViewDiffableDataSource<Section, City>!
 
@@ -37,15 +37,16 @@ class SearchScreen: UIViewController {
     func configureSearchScreen() {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
-        title = "Weather"
+        title                = "Weather"
     }
     
     
     func configureSearchController() {
-        searchController.searchResultsUpdater = self
+        searchController.searchResultsUpdater                 = self
+        searchController.searchBar.delegate                   = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search for city"
-        navigationItem.searchController = searchController
+        searchController.searchBar.placeholder                = "Search for city"
+        navigationItem.searchController                       = searchController
     }
     
     
@@ -82,7 +83,6 @@ class SearchScreen: UIViewController {
             case .failure(let error):
                 self.presentGFAllertOnMainThread(title: "bad stuff happened", message: error.rawValue, buttonTitle: "Ok")
             }
-
         }
     }
     
@@ -106,8 +106,6 @@ class SearchScreen: UIViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
     }
-    
-
 }
 
 extension SearchScreen: UISearchResultsUpdating, UISearchBarDelegate {
@@ -120,16 +118,14 @@ extension SearchScreen: UISearchResultsUpdating, UISearchBarDelegate {
         if searchCities.count > 10 {
             searchCities = searchCities.dropLast(searchCities.count - 10)
         }
-        print("searchCities.count = ", searchCities.count)
         updateData(on: searchCities)
-        
     }
 
      
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchCities.removeAll()
         updateData(on: searchCities)
-        isSearching = false
+        tableView.reloadData()
     }
 }
 
@@ -147,11 +143,11 @@ extension SearchScreen: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = searchCities[indexPath.row]
         let destVC = WeatherVC(with: city.id)
-        present(destVC, animated: true)
+        let navigationController = UINavigationController(rootViewController: destVC)
+        present(navigationController, animated: true)
     }
-    
-    
 }

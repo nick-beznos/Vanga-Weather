@@ -18,7 +18,6 @@
 		280ABAEF23F2B39A00BBB994 /* VWError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ABAEE23F2B39A00BBB994 /* VWError.swift */; };
 		280ABAF323F2C23600BBB994 /* CitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ABAF223F2C23600BBB994 /* CitiesList.swift */; };
 		280ABAF523F2DC4600BBB994 /* listOfCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 280ABAF423F2DC4600BBB994 /* listOfCities.json */; };
-		280ABAF723F308B600BBB994 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280ABAF623F308B600BBB994 /* Constants.swift */; };
 		2873304623F40233009CB8E1 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873304523F40233009CB8E1 /* WeatherVC.swift */; };
 		2873304A23F41188009CB8E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873304923F41188009CB8E1 /* Extensions.swift */; };
 		2873304E23F412E3009CB8E1 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873304D23F412E3009CB8E1 /* AlertVC.swift */; };
@@ -44,7 +43,6 @@
 		280ABAEE23F2B39A00BBB994 /* VWError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VWError.swift; sourceTree = "<group>"; };
 		280ABAF223F2C23600BBB994 /* CitiesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesList.swift; sourceTree = "<group>"; };
 		280ABAF423F2DC4600BBB994 /* listOfCities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listOfCities.json; sourceTree = "<group>"; };
-		280ABAF623F308B600BBB994 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "Vanga Weather/Constants.swift"; sourceTree = SOURCE_ROOT; };
 		2873304523F40233009CB8E1 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		2873304923F41188009CB8E1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2873304D23F412E3009CB8E1 /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 		280ABACC23F2A22C00BBB994 /* Vanga Weather */ = {
 			isa = PBXGroup;
 			children = (
-				280ABAF623F308B600BBB994 /* Constants.swift */,
 				2873304923F41188009CB8E1 /* Extensions.swift */,
 				280ABAEC23F2B26700BBB994 /* NetworkManager.swift */,
 				280ABAEE23F2B39A00BBB994 /* VWError.swift */,
@@ -230,7 +227,6 @@
 				280ABAE923F2AE1800BBB994 /* Weather.swift in Sources */,
 				2873305023F41352009CB8E1 /* AlertContainerView.swift in Sources */,
 				2873305423F41426009CB8E1 /* VWTitleLabel.swift in Sources */,
-				280ABAF723F308B600BBB994 /* Constants.swift in Sources */,
 				2892CCEA23F3E94B001C3AA8 /* CityTableViewCell.swift in Sources */,
 				2873305223F413E8009CB8E1 /* VWBodyLabel.swift in Sources */,
 			);
