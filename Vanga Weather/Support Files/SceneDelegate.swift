@@ -21,15 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                window?.windowScene = windowScene
                window?.rootViewController = InitialNavVC()
                window?.makeKeyAndVisible()
-        
-        configureNavBar()
     }
 
-    
-    func configureNavBar() {
-        UINavigationBar.appearance().tintColor = .systemGreen
-    }
-    
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

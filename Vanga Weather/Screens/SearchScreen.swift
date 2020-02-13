@@ -122,12 +122,14 @@ extension SearchScreen: UISearchResultsUpdating, UISearchBarDelegate {
         }
         print("searchCities.count = ", searchCities.count)
         updateData(on: searchCities)
+        
     }
 
      
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-       updateData(on: searchCities)
-       isSearching = false
+        searchCities.removeAll()
+        updateData(on: searchCities)
+        isSearching = false
     }
 }
 
@@ -146,20 +148,9 @@ extension SearchScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let activeArray = isSearching ? filteredFollowers : followers
-//        let follower = activeArray[indexPath.item]
-//
-//        let destVC = UserInfoVC()
-//        destVC.username = follower.login
-//        destVC.delegate = self
-//        let navigationController = UINavigationController(rootViewController: destVC)
-//        present(navigationController, animated: true)
-        
-        
-//        let favorite = favorites[indexPath.row]
-//        let destVC = FollowersListVC(username: favorite.login)
-//
-//        navigationController?.pushViewController(destVC, animated: true)
+        let city = searchCities[indexPath.row]
+        let destVC = WeatherVC(with: city.id)
+        present(destVC, animated: true)
     }
     
     
