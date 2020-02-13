@@ -11,13 +11,12 @@ import Foundation
 class NetworkManager {
     static let shared           = NetworkManager()
     private let baseUrl         = "https://api.openweathermap.org/data/2.5/weather?id="
-    private let apiID          = "5e570dcdd771b46fbe6ae9a2496c8d34"
+    private let apiID           = "5e570dcdd771b46fbe6ae9a2496c8d34"
     
     private init() {}
 
     func getWeather(for cityID: Int, completed: @escaping(Result<Weather, VWError>) -> Void) {
         let endPoint = baseUrl + String(cityID) + "&appid=" + apiID
-        print(endPoint)
         
            guard let url = URL(string: endPoint) else {
             completed(.failure(.invalidURL))
@@ -25,8 +24,9 @@ class NetworkManager {
            }
            
            let task = URLSession.shared.dataTask(with: url) { data, responce, error in
-               if let _ = error {
+               if let error = error {
                 completed(.failure(.unableToComlete))
+                print(error)
                }
                
                guard let responce = responce as? HTTPURLResponse, responce.statusCode == 200 else {
@@ -39,16 +39,13 @@ class NetworkManager {
                 
                    return
                }
-            
-            print("statusCode=\(responce.statusCode)")
-               
+                           
                do {
                 let decoder                     = JSONDecoder()
                 let weather                     = try decoder.decode(Weather.self, from: data)
                 completed(.success(weather))
                } catch {
                    completed(.failure(.invalidData))
-                print(error)
                }
            }
            task.resume()

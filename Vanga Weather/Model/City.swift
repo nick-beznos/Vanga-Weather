@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct City: Codable {
+struct City: Codable, Hashable {
    let id: Int
    let name: String
 }
